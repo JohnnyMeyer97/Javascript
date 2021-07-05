@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Meu primeiro programa...</title>
+	<style> /* LINGUAGEM DE ESTILO */
+		body {
+			background-color: rgb(105,105,173);
+			color: white;
+			font: normal 20pt arial;
+		}
+		h1 {
+			color: rgb(199, 172, 23);
+		}
+	</style>
+</head>
+<body> <!-- LINGUAGEM DE MARCAÇÃO -->
+	<h1>Olá, mundo!</h1>
+	<p>Me livrei da maldição!</p>
+	<script> // LINGUAGEM DE PROGRAMAÇÃO
+		var n1 = Number.parseInt(window.prompt('Digite um  número: ')) //característica do prompt: mesmo digitando um número ele retorna uma string
+		var n2 = Number(window.prompt('Digite outro número: '))
+		var s = n1 + n2
+		/*
+		CONVERTER STRING EM NÚMERO:
+		Number.parseInt(n), ou só parseInt(n) - inteiro
+		Number.parseFloat(n), ou só parseFloat(n) - real, com vírgula
+		Number(n) - Ele se vira pra saber se é inteiro ou real
+		Sinal de + antes e junto do número, no caso, junto ao n1 ou/e n2
+		----------------------------------------------------------------
+		CONVERTER NÚMERO EM STRING
+		String(n)
+		n.toString()
+		*/
+		//window.alert('A soma dos valores é: ' + s)
+		window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
+		// (number + number) para adição
+		// (string + string) para concatenação
+
+		/*
+		CONCATENAÇÃO
+		var s = 'JavaScript'
+		'Eu estou aprendendo s'       // não faz interpolação
+		'Eu estou aprendendo ' + s    // usa concatenação
+		`Eu estou aprendendo ${s}`    // usa template string
+		REPARE QUE EU USEI CRASE E NÃO ASPAS SIMPLES
+		${} - placeholder
+		-----------------------------------------------------------------
+		FORMATANDO STRINGS
+		s.length            // quantos caracteres a string tem
+		s.toUpperCase()     // tudo para 'MAIÚSCULAS'
+		s.toLowerCase()     // tudo para 'minúsculas'
+		*/
+	</script>
+</body>
+</html>

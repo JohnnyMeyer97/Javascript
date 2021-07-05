@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(71, 82, 233);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> (Document Object Model) em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <div id="msg2">Clique em mim2</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0] // Seleciona o primeiro paragrafo, já que tem dois
+        window.document.write('Está escrito assim: ' + p1.innerText) // innerText - mostrar texto dentro
+        corpo.style.background = 'green'
+        p1.style.color = 'black'
+        var d = window.document.getElementById('msg')
+        d.style.background = 'black'
+        d.innerText = 'Modifiquei o texto por JS'
+        //window.document.getElementById('msg').innerText = 'Modificado denovo por JS, só que do jeito completo, grande e sem necessidade'
+
+        var d2 = window.document.querySelector('div#msg2')
+        d2.style.color = 'red'
+
+
+        /*
+        document.write(p1.innerHTML) - Pega o texto com a formatação, com as tags filhas
+        document.write(p1.innerText) - Pega só o texto sem a formatação
+        */
+
+        /*
+        window.document.write('Olá mundo') - Escrever mensagem
+        window.document.write(window.document.charset) - Mostrar o charsett
+        window.document.write(window.navigator.appName) - Mostrar navegador atual
+        window.document.write(window.document.URL) - Mostrar a URL
+        */
+    </script>
+</body>
+</html>

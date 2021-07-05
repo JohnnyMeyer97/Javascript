@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font: normal 20pt arial;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var nome = window.prompt('Qual é seu nome? ')
+        document.write(`Olá <strong>${nome}</strong>! Seu nome tem ${nome.length} letras. <br/>`) // write escreve na tela. writein escreve e pula para linha de baixo
+        // document.write(`<h2>Seu nome tem ${nome.length} letras.<h2> `) // pode-se usar tags dentro
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br/>`)
+        document.write(`Seu nome em minúsculas é ${nome.toLowerCase()} `)
+        
+        /*
+        FORMATANDO NÚMEROS
+        var n1 = 1545.5
+        n1.toFixed(2)                     // quantas casas decimais eu quero após ponto
+        '1545.50'
+        n1.toFixed(2).replace('.',',')    // troca ponto por vírgula
+        '1545,50'
+        n1.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) // localizar a string para o Brasil; currency - valor monetário; pode ser em reais, dólar, etc...
+        'R$ 1,545.50'
+        */
+    </script>
+</body>
+</html>

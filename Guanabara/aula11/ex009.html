@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nacionalidade</title>
+    <style>
+        h1 {
+            font: normal 15pt arial;
+            color: black;
+            text-transform: uppercase;
+        }
+        div#area {
+            display: inline-block;
+            width: 340px;
+            height: 200px;
+            padding-right: 40px;
+            padding-bottom: 40px;
+            padding-left: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #0686ad;
+            text-align: center;
+            border-radius: 10px;
+        }
+        input#txtp {
+            font: normal 15pt arial;
+            width: 235px;
+            color: black;
+            text-align: center;
+            border: none;
+            background: none;
+            border: 2px solid black;
+            border-radius: 5px;
+            background: white;
+        }
+        input#check {
+            height: 30px;
+            border: none;
+            background: rgb(71, 70, 70);
+            border: 2px solid black;
+            outline: none;
+            border-radius: 5px;
+            padding: 8px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+        input#check:hover {
+            background: white;
+            color: black;
+        }
+        div#res {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            width: 235px;
+            font: normal 15pt arial;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        <h1>Qual é sua nacionalidade?</h1>
+        <input type="text" name="txtp" id="txtp" placeholder="Seu pais / Your Country">
+        <input type="button" id="check" value="Checar" onclick="verifica()">
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function verifica() {
+            var pais = window.document.getElementById('txtp')
+            var resp = window.document.querySelector('div#res')
+            var tela = (pais.value)
+            if (tela.toLowerCase() == 'brasil' || tela.toLowerCase() == 'brazil') {
+                resp.innerHTML = "<strong>Você é Brasileiro !</strong> <br/><em>You're Brazilian!</em>"
+                resp.style.color = 'green'
+                resp.style.background = '#f6f86c'
+            } else {
+                resp.innerHTML = "<strong>Você é estrangeiro!</strong> <br/><em>You're a foreigner!</em>"
+                resp.style.color = 'red'
+                resp.style.background = 'black'
+            }
+        }
+    </script>
+</body>
+</html>

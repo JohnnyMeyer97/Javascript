@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interligando Campos de Formulários</title>
+    <script language="javascript" type="text/javascript">
+        function submitIt(carForm){ 
+            var doorOption = -1;
+            for(i=0; i<carForm.DoorCt.length; i++){ 
+                    if(carForm.DoorCt[i].checked){ 
+                        doorOption = i;
+                    } 
+                } 
+                if(doorOption == -1){ 
+                    alert("Você precisa selecionar 2 ou 4 portas");
+                    return false;
+                } 
+                if(carForm.DoorCt[doorOption].value == "fourDoor" && carForm.sunroof.checked){
+                    alert("Teto solar apenas para duas portas");
+                    return false;
+                } 
+                return false;
+        } 
+        function doorSet(sunroofField){ 
+            if(sunroofField.checked){ 
+                for(i=0; i<document.myForm.DoorCt.length; i++){ 
+                    if(document.myForm.DoorCt[i].value == "twoDoor"){ 
+                        document.myForm.DoorCt[i].checked = true;
+                    } 
+                } 
+            } 
+        } 
+    </script>
+</head>
+<body>
+    <h3>Selecione o tipo de carro</h3>
+    <form onsubmit="return submitlt(this)" action="envia.php" name="myForm">
+        <table cellspacing="8" cellpadding="8">
+            <tr>
+                <td>Opções</td>     
+                <td><input type="checkbox" name="sunroof" value="yes" onclick="doorSet(this)">Teto Solar (apenas 2 portas)</td>
+                <td><input type="checkbox" name="psteering" value="yes">Portas</td>
+            </tr>
+            <tr>
+                <td>Portas</td>
+                <td colspan="2">
+                    <input type="radio" value="twoDoor" name="DoorCt">Duas portas
+                    <input type="radio" value="fourDoor" name="DoorCt">Quatro portas
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Enviar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

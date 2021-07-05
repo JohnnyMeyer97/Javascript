@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Teste de escolha cidade</title>
+</head>
+<body>
+    <header>
+        <h1>Escolha cidade pelo estado</h1>
+    </header>
+    <section>
+        <div>
+            <fieldset id="endereco">
+                <legend>Endereço do Usuário</legend>
+                <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav, ..." required /></p>
+                <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999" required /></p>
+                <p><label for="cEst">Estado:</label>
+                    <select name="tEst" id="cEst" oncuechange="listaCidades(this.value)">
+                        <optgroup label="Região Norte">
+                            <option value="AC">Acre</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="PA">Pará</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="TO">Tocantins</option>                            
+                        </optgroup>
+                        <optgroup label="Região Nordeste">
+                            <option value="MA">Maranhão</option>
+                            <option value="PI">Piaui</option>
+                            <option value="CE">Ceará</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="BA">Bahia</option>
+                        </optgroup>
+                        <optgroup label="Região Centro-Oeste">
+                            <option value="DF">Distrito Federal</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato grosso do Sul</option>
+                        </optgroup>
+                        <optgroup label="Região Sudeste">
+                            <option value="SP" selected>São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="ES">Espírito Santo</option>
+                        </optgroup>
+                        <optgroup label="Região Sul">
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </optgroup>
+                        <!--
+                        value: o que será enviado para o servidor, se não colocar o que está entre
+                        a tag option é o que será enviado
+                        -->
+                    </select></p>
+                <p><label for="cCid">Cidade:</label>
+                    <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades" required="required" onfocus="listaCidades(cEst.value)" /></p>
+                    <datalist id="cidades">
+                        
+                    </datalist>
+            </fieldset>
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Johnny Meyer</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
